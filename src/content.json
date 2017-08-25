@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "question": "100+100=",
+      "options": [
+        200,
+        300,
+        400,
+        500
+      ],
+      "answer": 0
+    },
+    {
+      "question": "2+2=",
+      "options": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "answer": 2
+    },
+    {
+      "question": "3+3=",
+      "options": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "answer": 1
+    },
+    {
+      "question": "4+4=",
+      "options": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "answer": 2
+    }
+  ]
+}
