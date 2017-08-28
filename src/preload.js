@@ -61,7 +61,7 @@
 
             var loading = document.getElementsByClassName('page-loading')[0];
             // loading.parentNode.removeChild(loading);
-            loading.style.display = 'none';
+            loading.style.visibility = 'hidden';
 
             //to php
             var data = {type: 'onload'};

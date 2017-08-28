@@ -3,27 +3,25 @@ html
     head
         title #{htmlWebpackPlugin.options.title}
         meta(charset='UTF-8')
-        script
-            include ./js/fit.js
-        style
-            include ./css/base.css
+        link(href='./css/base.css' rel="stylesheet")
+        script(src='./preload.js')
     body(style={margin: 'auto', 'background-color': 'black'})
         div(class='container')
             div(class='page-loading')
                 div(class='loader-container run done')
                     span(class='runner')
                 span(class='loadingText') loading...
-            div(id='animation_container'
-            style={
-                position: 'absolute',
-                margin: 'auto',
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0
-            })
-                canvas(id='canvas' width='1920' height='1080' style={'user-select':'none'})
-            div(id='dom_overlay_container')
+        div(id='animation_container'
+        style={
+            position: 'absolute',
+            margin: 'auto',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0
+        })
+            canvas(id='canvas' width='1920' height='1080')
+        div(id='dom_overlay_container')
         script(src='./lib/createjs-2015.11.26.min.js')
         script(src='./start.js')
         script(src='./gaming.js')

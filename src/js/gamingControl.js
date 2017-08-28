@@ -1,5 +1,6 @@
 let {init} = require('../lib/exportRoot');
 let {showLoading, hideLoading} = require('./util');
+let {AnswerInfo, postAnswer} = require('./tophp');
 
 let lib, exportRoot;
 
@@ -18,6 +19,9 @@ let cat;
 let questionMark;//问号
 let questionTxt;//题目
 let fps;
+let postArr = [];//给php发答题信息
+let firstAnswer = true;//首次答题
+let errNum = 0;//答错次数
 
 
 const duration = 1000;
@@ -41,20 +45,11 @@ const dispatcher = new createjs.EventDispatcher();
 
 
 /**
- * 加载content.json
+ *
+ * @param q 题目数据
  * @return {Promise.<TResult>}
  */
-function getContentJson() {
-    return System.import(/*webpackChunkName:"content"*/ '../content.json')
-        .then(value => {
-            return value
-        })
-        .catch(err => {
-            throw err;
-        })
-}
-
-function gamingPage() {
+function gamingPage(q) {
 
     return init('1051F7115DE24BA0A3C40CFA4C9F9B5A', 'gaming', true)
         .then(({lib: l, exportRoot: e}) => new Promise(resolve => {
@@ -63,13 +58,15 @@ function gamingPage() {
                 resolve();
             }
         ))
-        .then(() => getContentJson())
+        //todo:
         .then(value => {
             hideLoading();
 
-            totalQuestion = value.questions.length;
+            questions=q.questions;
+
+            totalQuestion = q.questions.length;
             currentQuestionNum = 0;
-            questions = value.questions;
+            questions = q.questions;
 
             coin = exportRoot['coin'];
             coin.ox = coin.x;//记录coin原始位置
@@ -100,12 +97,13 @@ function gamingPage() {
             placeFishHookPosition = {x: exportRoot['placeFishHook'].x, y: exportRoot['placeFishHook'].y};
 
             generatorQuestion();
-            return new Promise(resolve => {
-                dispatcher.addEventListener('questionComplete', () => {
-                    showLoading();
-                    return resolve();
-                })
-            })
+
+            // return new Promise(resolve => {
+            //     dispatcher.addEventListener('questionComplete', () => {
+            //         showLoading();
+            //         return resolve();
+            //     })
+            // })
         })
 }
 
@@ -116,6 +114,8 @@ function generatorQuestion() {
     let question = getQuestion(currentQuestionNum);
     questionTxt.text = question.question;
     questionMark.text = "?";
+
+    firstAnswer = true;
 
     fishGotoScene(question.options)
         .then(() => wait(duration))
@@ -196,6 +196,18 @@ function check(fish) {
 
     let answer = getCurrentAnswer();
     if (fish.num === answer) {
+        //第一次答对，数组中此前没有相关数据
+        if (!postArr[currentQuestionNum]) {
+            let answerInfo = new AnswerInfo();
+            if (firstAnswer) {
+                answerInfo.init(currentQuestionNum, answer.toString(), 1, 1)
+            } else {
+                answerInfo.init(currentQuestionNum, answer.toString(), errNum + 1, 0)
+            }
+            postArr.push(answerInfo)
+        }
+        errNum = 0;
+
         fishBite(fish)
             .then(value => catSuccess(value))
             .then(() => catchCoin())
@@ -215,11 +227,17 @@ function check(fish) {
                     generatorQuestion();
                 } else {
 
-                    dispatcher.dispatchEvent('questionComplete');
+                    let postArr = getPostArr();
+                    postAnswer(postArr,totalQuestion);
+                    showLoading();
+
                 }
                 playing = false;
             })
     } else {
+
+        errNum++;
+
         fishBite(fish)
             .then(value => catFail(value))
             .then(() => wait(duration))
@@ -232,6 +250,8 @@ function check(fish) {
                 fish.alpha = 0;
                 //小猫保持钓鱼状态
                 cat.gotoAndStop('normal');
+
+                firstAnswer = false;
 
                 //小鱼游回来
                 createjs.Tween.get(fish).to({x: fish.ox, y: fish.oy, alpha: 1}, duration * .5)
@@ -351,6 +371,11 @@ function getFishFromPool() {
 
 function backFishToPool(fish) {
     fishPool.push(fish);
+}
+
+
+export function getPostArr() {
+    return postArr;
 }
 
 
