@@ -12,6 +12,36 @@
 }
 
 
+.logo {
+    position: absolute;
+    z-index: 999;
+    left: .5rem;
+    bottom: .3rem;
+    width: 1.9rem;
+    height: 0.37rem;
+}
+
+.close {
+    top: .3rem;
+    right: .4rem;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    cursor: pointer;
+
+}
+
+.timeout {
+    position: absolute;
+    top: 1.3rem;
+    right: .6rem;
+    color: #ee5766;
+    font-weight: 400;
+    font-family: YouYuan;
+    font-size: .6rem;
+    display: none;
+}
+
 .page-loading{
     position: absolute;
     top:0;
