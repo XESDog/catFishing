@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"gaming_atlas_", frames: [[2451,431,802,411],[2317,216,124,106],[164,1661,40,55],[2317,324,77,50],[2833,1140,39,30],[248,1661,40,55],[2833,1036,77,50],[2399,381,39,30],[2610,1262,124,106],[2317,108,124,106],[206,1661,40,55],[2309,414,138,125],[2833,1088,77,50],[2358,381,39,30],[2455,1506,98,98],[2733,984,98,98],[2733,1084,98,98],[2455,1606,98,98],[0,0,1964,688],[2451,844,593,138],[1966,0,349,412],[2455,984,276,276],[2733,1184,138,38],[1966,414,186,187],[0,1757,65,99],[97,1661,65,99],[2451,0,802,429],[2154,414,153,137],[2319,541,119,125],[1966,603,181,74],[2455,1401,170,103],[2154,553,163,122],[2455,1262,153,137],[0,690,2449,528],[0,1661,95,94],[0,1220,2453,439],[2317,0,124,106],[2833,984,77,50],[2396,324,40,55],[2317,376,39,30]]}
+		{name:"gaming_atlas_", frames: [[2451,431,802,411],[2610,1262,124,106],[206,1661,40,55],[2833,1088,77,50],[2399,381,39,30],[248,1661,40,55],[2833,984,77,50],[2358,381,39,30],[2317,108,124,106],[2317,216,124,106],[164,1661,40,55],[2309,414,138,125],[2833,1036,77,50],[2833,1140,39,30],[2733,1084,98,98],[2455,1506,98,98],[2455,1606,98,98],[2733,984,98,98],[0,0,1964,688],[2451,844,593,138],[1966,0,349,412],[2455,984,276,276],[2733,1184,138,38],[1966,414,186,187],[97,1661,65,99],[0,1757,65,99],[2451,0,802,429],[2455,1262,153,137],[2319,541,119,125],[1966,603,181,74],[2455,1401,170,103],[2154,553,163,122],[2154,414,153,137],[0,690,2449,528],[0,1661,95,94],[0,1220,2453,439],[2317,0,124,106],[2317,324,77,50],[2396,324,40,55],[2317,376,39,30]]}
 ];
 
 
@@ -333,6 +333,14 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 (lib.question = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.mouseEnabled=false;
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer 3
 	this.questionMark = new cjs.Text("？", "65px 'Microsoft YaHei'", "#FF66CC");
@@ -1300,25 +1308,20 @@ p.nominalBounds = new cjs.Rectangle(-68.7,-19.2,137.6,37.5);
 	this.frame_0 = function() {
 		//初始位置
 		var waterAX=this.waterA.x;
-		var waterBX=this.waterB.x;
 		var duration=5000;
+		this.waterA.mouseEnable=false;
 		createjs.Tween.get(this.waterA,{loop:true}).to({x:-480},duration,createjs.Ease.none).to({x:waterAX},duration,createjs.Ease.none)
-		createjs.Tween.get(this.waterB,{loop:true}).to({x:0},duration,createjs.Ease.none).to({x:waterBX},duration,createjs.Ease.none)
 	}
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer 3
-	this.waterB = new lib.waterA();
-	this.waterB.parent = this;
-	this.waterB.setTransform(-480,697.4);
-
 	this.waterA = new lib.waterB();
 	this.waterA.parent = this;
 	this.waterA.setTransform(0,612.2);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.waterA},{t:this.waterB}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.waterA).wait(1));
 
 	// Layer 1
 	this.instance = new lib.Bitmap26();
@@ -1326,7 +1329,7 @@ p.nominalBounds = new cjs.Rectangle(-68.7,-19.2,137.6,37.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
-}).prototype = getMCSymbolPrototype(lib.bg, new cjs.Rectangle(-480,0,2929,1140.2), null);
+}).prototype = getMCSymbolPrototype(lib.bg, new cjs.Rectangle(0,0,2449,1140.2), null);
 
 
 (lib.lib_8827_3101 = function(mode,startPosition,loop) {
@@ -2258,6 +2261,19 @@ p.nominalBounds = new cjs.Rectangle(-494.2,-377.5,895.2,903.7);
 (lib.gaming = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
+	// timeline functions:
+	this.frame_0 = function() {
+		this.cat.mouseEnabled=false;
+		
+		var waterBX=this.waterB.x;
+		var duration=5000;
+		this.waterB.mouseEnable=false;
+		createjs.Tween.get(this.waterB,{loop:true}).to({x:0},duration,createjs.Ease.none).to({x:waterBX},duration,createjs.Ease.none)
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
 	// fps
 	this.fps = new cjs.Text("fsp", "50px 'Times'");
 	this.fps.name = "fps";
@@ -2316,6 +2332,14 @@ p.nominalBounds = new cjs.Rectangle(-494.2,-377.5,895.2,903.7);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
+	// waterB
+	this.waterB = new lib.waterA();
+	this.waterB.parent = this;
+	this.waterB.setTransform(-480,697.4);
+	this.waterB.alpha = 0.5;
+
+	this.timeline.addTween(cjs.Tween.get(this.waterB).wait(1));
+
 	// cat
 	this.cat = new lib.cat();
 	this.cat.parent = this;
@@ -2338,7 +2362,7 @@ p.nominalBounds = new cjs.Rectangle(-494.2,-377.5,895.2,903.7);
 	this.timeline.addTween(cjs.Tween.get(this.bg).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(470,530,2929,1140.2);
+p.nominalBounds = new cjs.Rectangle(480,530,2919,1146.4);
 // library properties:
 lib.properties = {
 	id: '1051F7115DE24BA0A3C40CFA4C9F9B5A',
@@ -2348,7 +2372,7 @@ lib.properties = {
 	color: "#666666",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/gaming_atlas_.png?1503563006766", id:"gaming_atlas_"}
+		{src:"images/gaming_atlas_.png?1504147658256", id:"gaming_atlas_"}
 	],
 	preloads: []
 };

@@ -60,8 +60,7 @@
         if( document.readyState ==="complete" ) {
 
             var loading = document.getElementsByClassName('page-loading')[0];
-            // loading.parentNode.removeChild(loading);
-            loading.style.visibility = 'hidden';
+            // loading.style.visibility = 'hidden';
 
             //to php
             var data = {type: 'onload'};

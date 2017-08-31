@@ -8,28 +8,40 @@ export class AnswerInfo {
         this.type = 0;//0：完成，1：多选，2：填空
         this.rightnum = 1;//填空题答对的个数
         this.wrongnum = 0;//填空题答错的个数
-        this.rate=1;
+        this.rate = 1;
     }
 
     /**
-     *
+     * @protected
      * @param id
-     * @param answer
-     * @param errNum
-     * @param rightNum
+     * @param answer    接受数组或者字符串
+     * @param times
+     * @param rightnum
      */
-    init(id, answer, errNum, rightNum) {
+    _init(id, answer, times, rightnum) {
         this.id = id;
-        this.useranswer = answer;
-        this.answer = answer;
-        this.times = errNum;
-        this.rightnum = rightNum;
+        this.useranswer = answer.toString();
+        this.answer = answer.toString();
+        this.times = times;
+        this.rightnum = rightnum;
+    }
+
+    success(id, answer) {
+        this._init(id, answer, 1, 1)
+    }
+
+    fail(id, answer, times) {
+        this._init(id, answer, times, 0)
     }
 }
 
 
-
-export function postAnswer(postArr,testNum) {
+/**
+ * 提交
+ * @param postArr
+ * @param testNum
+ */
+export function postAnswer(postArr, testNum) {
 
     let data = {
         type: 'submitAnswer',
@@ -38,8 +50,6 @@ export function postAnswer(postArr,testNum) {
             testNum: testNum
         }
     };
-    //todo:测试答题数据
-    window.answerData = data;
     window.parent.postMessage(data, '*');
 
 }

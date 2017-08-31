@@ -12,6 +12,15 @@
   background-position: center center;
   background-repeat: no-repeat; }
 
+.logo{
+  position: absolute;
+  z-index: 999;
+  left: .5rem;
+  bottom: .3rem;
+  width: 1.9rem;
+  height: 0.37rem;
+}
+
 .page-loading {
   position: absolute;
   top: 0;

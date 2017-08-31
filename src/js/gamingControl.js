@@ -1,8 +1,7 @@
 let {init} = require('../lib/exportRoot');
-let {showLoading, hideLoading} = require('./util');
 let {AnswerInfo, postAnswer} = require('./tophp');
 
-let lib, exportRoot;
+let lib, exportRoot, stage;
 
 let currentQuestionNum;
 let totalQuestion;
@@ -24,13 +23,11 @@ let firstAnswer = true;//首次答题
 let errNum = 0;//答错次数
 
 
-const duration = 1000;
+let duration = 1000;
 const NOT_FOUND_MC = new Error('指定元件不存在')
 const LEFT = 'left';
 const RIGHT = 'right';
 const COMPLETE = 'complete';
-
-const dispatcher = new createjs.EventDispatcher();
 
 
 /**
@@ -49,20 +46,25 @@ const dispatcher = new createjs.EventDispatcher();
  * @param q 题目数据
  * @return {Promise.<TResult>}
  */
-function gamingPage(q) {
+export function gamingPage(q) {
 
     return init('1051F7115DE24BA0A3C40CFA4C9F9B5A', 'gaming', true)
         .then(({lib: l, exportRoot: e}) => new Promise(resolve => {
+                window.dispatchEvent(new Event('init_gaming'))
                 lib = l;
                 exportRoot = e;
+
+
+                stage = exportRoot.stage;
+                //允许鼠标over事件，耗性能
+                stage.enableMouseOver();
+
                 resolve();
             }
         ))
-        //todo:
         .then(value => {
-            hideLoading();
 
-            questions=q.questions;
+            questions = q.questions;
 
             totalQuestion = q.questions.length;
             currentQuestionNum = 0;
@@ -78,17 +80,19 @@ function gamingPage(q) {
             fps = exportRoot['fps'];
             fps.visible = false;
 
-            window.debug = true;
 
-            setInterval(() => {
-                    if (!!window.debug) {
-                        fps.visible = true;
-                        fps.text = 'fps:' + parseInt(createjs.Ticker.getMeasuredFPS())
-                    } else {
-                        fps.visible = false;
+            if (window.debug) {
+                duration = 100;
+                setInterval(() => {
+                        if (window.debug.fps) {
+                            fps.visible = true;
+                            fps.text = 'fps:' + parseInt(createjs.Ticker.getMeasuredFPS())
+                        } else {
+                            fps.visible = false;
+                        }
                     }
-                }
-                , 200)
+                    , 200)
+            }
 
             questionMark = exportRoot['question']['questionMark'];
             questionTxt = exportRoot['question']['txt'];
@@ -97,13 +101,6 @@ function gamingPage(q) {
             placeFishHookPosition = {x: exportRoot['placeFishHook'].x, y: exportRoot['placeFishHook'].y};
 
             generatorQuestion();
-
-            // return new Promise(resolve => {
-            //     dispatcher.addEventListener('questionComplete', () => {
-            //         showLoading();
-            //         return resolve();
-            //     })
-            // })
         })
 }
 
@@ -200,9 +197,9 @@ function check(fish) {
         if (!postArr[currentQuestionNum]) {
             let answerInfo = new AnswerInfo();
             if (firstAnswer) {
-                answerInfo.init(currentQuestionNum, answer.toString(), 1, 1)
+                answerInfo.success(currentQuestionNum, answer)
             } else {
-                answerInfo.init(currentQuestionNum, answer.toString(), errNum + 1, 0)
+                answerInfo.fail(currentQuestionNum, answer, errNum + 1)
             }
             postArr.push(answerInfo)
         }
@@ -228,8 +225,7 @@ function check(fish) {
                 } else {
 
                     let postArr = getPostArr();
-                    postAnswer(postArr,totalQuestion);
-                    showLoading();
+                    postAnswer(postArr, totalQuestion);
 
                 }
                 playing = false;
@@ -264,8 +260,10 @@ function check(fish) {
 
 function fishBite(fish) {
     return new Promise(resolve => {
+        stage.enableMouseOver(0)
         createjs.Tween.get(fish).to({x: placeFishHookPosition.x, y: placeFishHookPosition.y}, duration)
             .call(() => {
+                stage.enableMouseOver()
                 fish.visible = false;
                 resolve(fish);
             })
@@ -365,7 +363,18 @@ function getFishFromPool() {
     if (fishPool.length > 0) {
         return fishPool.splice(0, 1)[0]
     } else {
-        return new lib.option();
+        //所有鱼默认有该事件
+        var fish = new lib.option();
+        fish.on('mouseover', e => {
+            fish.scaleX = 1.1;
+            fish.scaleY = 1.1
+        })
+        fish.on('mouseout', e => {
+            fish.scaleX = 1;
+            fish.scaleY = 1
+        });
+        fish.cursor = 'pointer';
+        return fish;
     }
 }
 
@@ -378,5 +387,3 @@ export function getPostArr() {
     return postArr;
 }
 
-
-export {gamingPage}

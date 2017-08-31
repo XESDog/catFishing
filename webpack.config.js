@@ -22,9 +22,11 @@ module.exports = {
         filename: '[name].js',
         path: __dirname + '/dist',
         chunkFilename: '[name].js',//content.json->content.js
-        publicPath: "./"
+        publicPath: "./",
+        sourceMapFilename: "map/[file].map"
     },
-    devtool:'inline-source-map',
+    // devtool:'inline-source-map',
+    devtool: 'source-map',
     module: {
         loaders: [
             {
@@ -74,4 +76,4 @@ module.exports = {
     externals: {
         'jquery': 'jQuery',
     }
-};
+}
