@@ -1,101 +1,135 @@
 
 .container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 19.20rem;
-  height: 10.80rem;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat; }
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 19.20rem;
+    height: 10.80rem;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 
-.logo{
-  position: absolute;
-  z-index: 999;
-  left: .5rem;
-  bottom: .3rem;
-  width: 1.9rem;
-  height: 0.37rem;
+.logo {
+    position: absolute;
+    z-index: 999;
+    left: .5rem;
+    bottom: .3rem;
+    width: 1.9rem;
+    height: 0.37rem;
+}
+
+.close {
+    top: .3rem;
+    right: .4rem;
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    cursor: pointer;
+
+}
+
+.timeout {
+    position: absolute;
+    top: 1.3rem;
+    right: .6rem;
+    color: #ee5766;
+    font-weight: 400;
+    font-family: YouYuan;
+    font-size: .6rem;
+    display: none;
 }
 
 .page-loading {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #75ddee;
-  background-size: cover;
-  z-index: 999999;
-  text-align: center; }
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #75ddee;
+    background-size: cover;
+    z-index: 999999;
+    text-align: center;
+}
 
 .loader-container {
-  height: .4rem;
-  width: 6.8rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -1rem;
-  margin-left: -3.4rem;
-  background-color: #999999;
-  border-radius: .5rem;
-  border: .05rem solid #ffffff;
-  overflow: hidden;
-  -ms-transform: rotate(0deg);
-      transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform-styl: preserve-3d;
-  -moz-transform-styl: preserve-3d;
-  -o-transform-styl: preserve-3d; }
+    height: .4rem;
+    width: 6.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1rem;
+    margin-left: -3.4rem;
+    background-color: #999999;
+    border-radius: .5rem;
+    border: .05rem solid #ffffff;
+    overflow: hidden;
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-styl: preserve-3d;
+    -moz-transform-styl: preserve-3d;
+    -o-transform-styl: preserve-3d;
+}
 
 .run .runner {
-  border-radius: .5rem .5rem .5rem .5rem;
-  position: absolute;
-  left: .1rem;
-  height: 100%;
-  width: 100%;
-  background-image: -webkit-linear-gradient(left, #ffcf93, #f98d9d, #a392fb);
-  background-image: -webkit-gradient(linear, left top, right top, from(#ffcf93), color-stop(#f98d9d), to(#a392fb));
-  background-image: linear-gradient(left, #ffcf93, #f98d9d, #a392fb);
-  animation: loader 3s infinite linear;
-  -webkit-animation: loader 3s infinite linear;
-  -o-animation: loader 3s infinite linear;
-  -moz-animation: loader 3s infinite linear; }
+    border-radius: .5rem .5rem .5rem .5rem;
+    position: absolute;
+    left: .1rem;
+    height: 100%;
+    width: 100%;
+    background-image: -webkit-linear-gradient(left, #ffcf93, #f98d9d, #a392fb);
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffcf93), color-stop(#f98d9d), to(#a392fb));
+    background-image: linear-gradient(left, #ffcf93, #f98d9d, #a392fb);
+    animation: loader 3s infinite linear;
+    -webkit-animation: loader 3s infinite linear;
+    -o-animation: loader 3s infinite linear;
+    -moz-animation: loader 3s infinite linear;
+}
 
 .loadingText {
-  display: block;
-  position: absolute;
-  left: 42%;
-  top: 52%;
-  color: #849bfe;
-  font-size: .7rem;
-  font-weight: 900;
-  font-family: Comic Sans MS;
-  /*-webkit-text-stroke-width: .03rem;*/
-  /*-webkit-text-stroke-color: #fff;*/
-  text-shadow: #ffffff .03rem 0 0,#ffffff 0 .03rem 0,#ffffff -.03rem 0 0,#ffffff 0 -.03rem 0;
-  -webkit-text-shadow: #ffffff .03rem 0 0,#ffffff 0 .03rem 0,#ffffff -.03rem 0 0,#ffffff 0 -.03rem 0;
-  -moz-text-shadow: #ffffff .03rem 0 0,#ffffff 0 .03rem 0,#ffffff -.03rem 0 0,#ffffff 0 -.03rem 0; }
+    display: block;
+    position: absolute;
+    left: 42%;
+    top: 52%;
+    color: #849bfe;
+    font-size: .7rem;
+    font-weight: 900;
+    font-family: Comic Sans MS;
+    /*-webkit-text-stroke-width: .03rem;*/
+    /*-webkit-text-stroke-color: #fff;*/
+    text-shadow: #ffffff .03rem 0 0, #ffffff 0 .03rem 0, #ffffff -.03rem 0 0, #ffffff 0 -.03rem 0;
+    -webkit-text-shadow: #ffffff .03rem 0 0, #ffffff 0 .03rem 0, #ffffff -.03rem 0 0, #ffffff 0 -.03rem 0;
+    -moz-text-shadow: #ffffff .03rem 0 0, #ffffff 0 .03rem 0, #ffffff -.03rem 0 0, #ffffff 0 -.03rem 0;
+}
 
 @-webkit-keyframes loader {
-  0% {
-    -webkit-transform: translate(-6.8rem); }
-  50% {
-    -webkit-transform: translate(0); }
-  100% {
-    -webkit-transform: translate(6.8rem); } }
+    0% {
+        -webkit-transform: translate(-6.8rem);
+    }
+    50% {
+        -webkit-transform: translate(0);
+    }
+    100% {
+        -webkit-transform: translate(6.8rem);
+    }
+}
 
 @keyframes loader {
-  0% {
-    -webkit-transform: translate(-6.8rem); }
-  50% {
-    -webkit-transform: translate(0); }
-  100% {
-    -webkit-transform: translate(6.8rem); } }
+    0% {
+        -webkit-transform: translate(-6.8rem);
+    }
+    50% {
+        -webkit-transform: translate(0);
+    }
+    100% {
+        -webkit-transform: translate(6.8rem);
+    }
+}

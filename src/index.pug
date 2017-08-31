@@ -6,6 +6,9 @@ html
         link(href='./css/base.css' rel="stylesheet")
         script(src='./preload.js')
     body(style={margin: 'auto', 'background-color': 'black'})
+        div(style={
+            display:'none'
+        }) #{htmlWebpackPlugin.options.version}
         div(class='container')
             div(class='page-loading')
                 div(class='loader-container run done')
@@ -22,6 +25,8 @@ html
         })
             canvas(id='canvas' width='1920' height='1080')
             img(class='logo' src='./images/logo.png')
+            img(class='close' src='./images/close.png' style={display: 'none'})
+            div(class='timeout') abc
         div(id='dom_overlay_container')
         script(src='./lib/createjs-2015.11.26.min.js')
         script(src='./start.js')

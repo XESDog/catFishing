@@ -10,6 +10,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const dateFormat = require('dateformat');
+const now = new Date();
+const version = `version:${dateFormat(now, 'yyyy-m-d-H-M-s')}`
 
 module.exports = {
     // target:'electron-main',
@@ -55,6 +58,7 @@ module.exports = {
         new CleanWebpackPlugin(['./dist']),
         new HtmlWebpackPlugin({
             title: '小猫钓鱼',
+            version: version,
             jquery: '//cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
             template: './src/index.pug',
             minify: {

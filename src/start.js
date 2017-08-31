@@ -1285,6 +1285,7 @@ p.nominalBounds = new cjs.Rectangle(-753.7,-78.4,627.8,606.8);
 		this.btn.on('mouseout', function (e) {
 			ball.gotoAndStop(0)
 		})
+		this.btn.cursor='pointer';
 	}
 
 	// actions tween:
@@ -1392,8 +1393,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/start_atlas_.png?1504158335550", id:"start_atlas_"},
-		{src:"sounds/effect.mp3?1504158335607", id:"effect"}
+		{src:"images/start_atlas_.png?1504158862806", id:"start_atlas_"},
+		{src:"sounds/effect.mp3?1504158862864", id:"effect"}
 	],
 	preloads: []
 };

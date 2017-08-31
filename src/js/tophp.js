@@ -54,6 +54,14 @@ export function postAnswer(postArr, testNum) {
 
 }
 
+/**
+ * 关闭页面
+ */
+export function postClose(){
+    let data = {type: 'close'};
+    window.parent.postMessage(data, '*');
+}
+
 
 /**
  * 模拟后台返回数据

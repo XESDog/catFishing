@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"gaming_atlas_", frames: [[2451,431,802,411],[2610,1262,124,106],[206,1661,40,55],[2833,1088,77,50],[2399,381,39,30],[248,1661,40,55],[2833,984,77,50],[2358,381,39,30],[2317,108,124,106],[2317,216,124,106],[164,1661,40,55],[2309,414,138,125],[2833,1036,77,50],[2833,1140,39,30],[2733,1084,98,98],[2455,1506,98,98],[2455,1606,98,98],[2733,984,98,98],[0,0,1964,688],[2451,844,593,138],[1966,0,349,412],[2455,984,276,276],[2733,1184,138,38],[1966,414,186,187],[97,1661,65,99],[0,1757,65,99],[2451,0,802,429],[2455,1262,153,137],[2319,541,119,125],[1966,603,181,74],[2455,1401,170,103],[2154,553,163,122],[2154,414,153,137],[0,690,2449,528],[0,1661,95,94],[0,1220,2453,439],[2317,0,124,106],[2317,324,77,50],[2396,324,40,55],[2317,376,39,30]]}
+		{name:"gaming_atlas_", frames: [[2451,431,802,411],[3046,968,124,106],[3211,901,40,55],[4003,254,77,50],[3172,1015,39,30],[2106,620,40,55],[4003,202,77,50],[3213,1015,39,30],[2606,984,124,106],[3533,822,124,106],[3211,958,40,55],[2309,431,138,125],[4003,306,77,50],[3213,1047,39,30],[0,0,1964,688],[2451,844,593,138],[3666,411,349,412],[3255,822,276,276],[1966,620,138,38],[1966,431,186,187],[4003,0,65,99],[4003,101,65,99],[1966,0,802,429],[2154,431,153,137],[2326,558,119,125],[2451,1123,181,74],[2154,570,170,103],[3046,844,163,122],[2451,984,153,137],[0,690,2449,528],[2858,984,95,94],[0,1220,2453,439],[2732,984,124,106],[4003,358,77,50],[3211,844,40,55],[3172,1047,39,30],[3255,411,409,409],[2770,0,409,409],[3592,0,409,409],[3181,0,409,409]]}
 ];
 
 
@@ -109,182 +109,182 @@ lib.ssMetadata = [
 
 
 
-(lib.Bitmap22 = function() {
+(lib.Bitmap26 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(14);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap23 = function() {
+(lib.Bitmap27 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(15);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap24 = function() {
+(lib.Bitmap28 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(16);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap25 = function() {
+(lib.Bitmap29 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(17);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap26 = function() {
+(lib.Bitmap3 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(18);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap27 = function() {
+(lib.Bitmap30 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(19);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap28 = function() {
+(lib.Bitmap31 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(20);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap29 = function() {
+(lib.Bitmap32 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(21);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap3 = function() {
+(lib.Bitmap33 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(22);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap30 = function() {
+(lib.Bitmap34 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(23);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap31 = function() {
+(lib.Bitmap35 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(24);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap32 = function() {
+(lib.Bitmap36 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(25);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap33 = function() {
+(lib.Bitmap37 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(26);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap34 = function() {
+(lib.Bitmap38 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(27);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap35 = function() {
+(lib.Bitmap39 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(28);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap36 = function() {
+(lib.Bitmap4 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(29);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap37 = function() {
+(lib.Bitmap40 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(30);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap38 = function() {
+(lib.Bitmap5 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(31);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap39 = function() {
+(lib.Bitmap6 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(32);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap4 = function() {
+(lib.Bitmap7 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(33);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap40 = function() {
+(lib.Bitmap8 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(34);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap5 = function() {
+(lib.Bitmap9 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(35);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap6 = function() {
+(lib.泡泡0001 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(36);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap7 = function() {
+(lib.泡泡0002 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(37);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap8 = function() {
+(lib.泡泡0003 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(38);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.Bitmap9 = function() {
+(lib.泡泡0004 = function() {
 	this.spriteSheet = ss["gaming_atlas_"];
 	this.gotoAndStop(39);
 }).prototype = p = new cjs.Sprite();
@@ -343,19 +343,19 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer 3
-	this.questionMark = new cjs.Text("？", "65px 'Microsoft YaHei'", "#FF66CC");
+	this.questionMark = new cjs.Text("？", "72px 'Arial'", "#FB555B");
 	this.questionMark.name = "questionMark";
-	this.questionMark.lineHeight = 86;
+	this.questionMark.lineHeight = 101;
 	this.questionMark.lineWidth = 145;
 	this.questionMark.parent = this;
 	this.questionMark.setTransform(84.8,-47.4);
 
-	this.txt = new cjs.Text("7+4+8=", "55px 'Microsoft YaHei'", "#89664A");
+	this.txt = new cjs.Text("7+4+8=", "72px 'Arial'", "#87664A");
 	this.txt.name = "txt";
 	this.txt.textAlign = "right";
-	this.txt.lineHeight = 73;
+	this.txt.lineHeight = 80;
 	this.txt.parent = this;
-	this.txt.setTransform(74.9,-43.2,1.137,1.137);
+	this.txt.setTransform(74.9,-47.1,1.137,1.137);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.txt},{t:this.questionMark}]}).wait(1));
 
@@ -890,26 +890,26 @@ p.nominalBounds = new cjs.Rectangle(-19,-15,39,30);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(6));
 
-	// layer 0
-	this.instance = new lib.Bitmap22();
+	// Layer 3
+	this.instance = new lib.泡泡0004();
 	this.instance.parent = this;
-	this.instance.setTransform(-49,-49);
+	this.instance.setTransform(-49,-49,0.24,0.24);
 
-	this.instance_1 = new lib.Bitmap23();
+	this.instance_1 = new lib.泡泡0003();
 	this.instance_1.parent = this;
-	this.instance_1.setTransform(-49,-50);
+	this.instance_1.setTransform(-49,-49,0.24,0.24);
 
-	this.instance_2 = new lib.Bitmap24();
+	this.instance_2 = new lib.泡泡0002();
 	this.instance_2.parent = this;
-	this.instance_2.setTransform(-49,-50);
+	this.instance_2.setTransform(-49,-49,0.24,0.24);
 
-	this.instance_3 = new lib.Bitmap25();
+	this.instance_3 = new lib.泡泡0001();
 	this.instance_3.parent = this;
-	this.instance_3.setTransform(-50,-50);
+	this.instance_3.setTransform(-49,-49,0.24,0.24);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_3}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_3}]},1).wait(3));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-49,-49,98,98);
@@ -1945,7 +1945,7 @@ p.nominalBounds = new cjs.Rectangle(-494.2,-377.3,895.2,903.5);
 	this.shape.setTransform(2,-190.1);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#86674A").ss(2,1,1).p("ABLh0QAiAnA8ATAAekCQgCBaAvA0AhailQBJgYAvhFQAFgJAGgJAhailQg7DQAFB0QAEBjAsATQBUABAzjNQAUhPAQhuAioiZQAqgBAkgL");
+	this.shape_1.graphics.f().s("#86674A").ss(2,1,1).p("AAekCQAFgJAGgJAhailQBJgYAvhFQgCBaAvA0QAiAnA8ATAhailQg7DQAFB0QAEBjAsATQBUABAzjNQAUhPAQhuAioiZQAqgBAkgL");
 	this.shape_1.setTransform(-5.9,-158,1.018,1.018,5.7);
 
 	this.shape_2 = new cjs.Shape();
@@ -2196,19 +2196,19 @@ p.nominalBounds = new cjs.Rectangle(-494.2,-377.3,895.2,903.5);
 	this.txt = new cjs.Text("142", "50px 'Arial'", "#89664A");
 	this.txt.name = "txt";
 	this.txt.textAlign = "center";
-	this.txt.lineHeight = 50;
+	this.txt.lineHeight = 56;
 	this.txt.lineWidth = 94;
 	this.txt.parent = this;
-	this.txt.setTransform(99.6,-82.2);
+	this.txt.setTransform(99.6,-76.2);
 
 	this.timeline.addTween(cjs.Tween.get(this.txt).wait(1));
 
 	// layer 0
-	this.instance = new lib.lib_4693_897();
-	this.instance.parent = this;
-	this.instance.setTransform(99.3,-48.4);
+	this.pop = new lib.lib_4693_897();
+	this.pop.parent = this;
+	this.pop.setTransform(99.3,-48.4);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.pop).wait(1));
 
 }).prototype = getMCSymbolPrototype(lib.option, new cjs.Rectangle(-149.4,-97.4,298,194.9), null);
 
@@ -2372,7 +2372,7 @@ lib.properties = {
 	color: "#666666",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/gaming_atlas_.png?1504147658256", id:"gaming_atlas_"}
+		{src:"images/gaming_atlas_.png?1504161319990", id:"gaming_atlas_"}
 	],
 	preloads: []
 };

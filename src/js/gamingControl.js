@@ -157,6 +157,7 @@ function fishGotoScene(options) {
             //todo:需要延时执行，才能正确跳转
             let timeout = setTimeout(function () {
                 fish.fish.gotoAndStop(i)
+                fish.pop.gotoAndStop(i);
                 clearTimeout(timeout);
             }, 1);
             //鱼头朝向
