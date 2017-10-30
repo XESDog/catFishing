@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"gaming_atlas_", frames: [[2451,431,802,411],[3046,968,124,106],[3211,901,40,55],[4003,254,77,50],[3172,1015,39,30],[2106,620,40,55],[4003,202,77,50],[3213,1015,39,30],[2606,984,124,106],[3533,822,124,106],[3211,958,40,55],[2309,431,138,125],[4003,306,77,50],[3213,1047,39,30],[0,0,1964,688],[2451,844,593,138],[3666,411,349,412],[3255,822,276,276],[1966,620,138,38],[1966,431,186,187],[4003,0,65,99],[4003,101,65,99],[1966,0,802,429],[2154,431,153,137],[2326,558,119,125],[2451,1123,181,74],[2154,570,170,103],[3046,844,163,122],[2451,984,153,137],[0,690,2449,528],[2858,984,95,94],[0,1220,2453,439],[2732,984,124,106],[4003,358,77,50],[3211,844,40,55],[3172,1047,39,30],[3255,411,409,409],[2770,0,409,409],[3592,0,409,409],[3181,0,409,409]]}
+		{name:"gaming_atlas_", frames: [[2451,431,802,411],[2606,984,124,106],[3211,844,40,55],[4003,202,77,50],[3213,1047,39,30],[2106,620,40,55],[4003,358,77,50],[3172,1015,39,30],[2732,984,124,106],[3046,968,124,106],[3211,958,40,55],[2309,431,138,125],[4003,254,77,50],[3172,1047,39,30],[0,0,1964,688],[2451,844,593,138],[3666,411,349,412],[3255,822,276,276],[1966,620,138,38],[1966,431,186,187],[4003,0,65,99],[4003,101,65,99],[1966,0,802,429],[2154,431,153,137],[2326,558,119,125],[2451,1123,181,74],[2154,570,170,103],[3046,844,163,122],[2451,984,153,137],[0,690,2449,528],[2858,984,95,94],[0,1220,2453,439],[3533,822,124,106],[4003,306,77,50],[3211,901,40,55],[3213,1015,39,30],[2770,0,409,409],[3255,411,409,409],[3181,0,409,409],[3592,0,409,409]]}
 ];
 
 
@@ -371,6 +371,15 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 (lib.placeHolder = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.visible=false;
+		this.mouseEnabled=false;
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Layer 1
 	this.shape = new cjs.Shape();
@@ -1945,7 +1954,7 @@ p.nominalBounds = new cjs.Rectangle(-494.2,-377.3,895.2,903.5);
 	this.shape.setTransform(2,-190.1);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f().s("#86674A").ss(2,1,1).p("AAekCQAFgJAGgJAhailQBJgYAvhFQgCBaAvA0QAiAnA8ATAhailQg7DQAFB0QAEBjAsATQBUABAzjNQAUhPAQhuAioiZQAqgBAkgL");
+	this.shape_1.graphics.f().s("#86674A").ss(2,1,1).p("ABLh0QAiAnA8ATAAekCQgCBaAvA0AhailQBJgYAvhFQAFgJAGgJAhailQg7DQAFB0QAEBjAsATQBUABAzjNQAUhPAQhuAioiZQAqgBAkgL");
 	this.shape_1.setTransform(-5.9,-158,1.018,1.018,5.7);
 
 	this.shape_2 = new cjs.Shape();
@@ -2372,7 +2381,7 @@ lib.properties = {
 	color: "#666666",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/gaming_atlas_.png?1504161319990", id:"gaming_atlas_"}
+		{src:"images/gaming_atlas_.png?1504772645172", id:"gaming_atlas_",loadTimeout:3000000}
 	],
 	preloads: []
 };

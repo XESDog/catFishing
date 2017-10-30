@@ -32,19 +32,6 @@
                     return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
                 }
             };
-            if(isMobile.any()){
-                var body = document.querySelector('body');
-                if( !document.querySelector('.layer')){
-                    var layer = document.createElement('div');
-                    body.appendChild(layer);
-                    layer.innerHTML = '未锁屏状态下，旋转屏幕体验更好';
-                    layer.setAttribute('class','layer');
-                }
-                if(aspectRatio > 1){
-                    var layer = document.querySelector('.layer');
-                    body.removeChild(layer);
-                }
-            }
         };
     try {
         recalc();

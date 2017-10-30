@@ -27,7 +27,7 @@ gulp.task('compress', ['clean:dist'], function () {
         resolve('src/preload.js')
     ])
         .pipe(minify(minifyConfig))
-        .pipe(gulp.dest(resolve('dist')))
+        .pipe(gulp.dest(resolve('dist/js/')))
 })
 gulp.task('scss',['clean:dist'],function () {
     return gulp.src(resolve('src/css/base.scss'))

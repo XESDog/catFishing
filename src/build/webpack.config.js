@@ -74,7 +74,11 @@ module.exports = {
             {from: resolve('src/images'), to: 'images'},
             {from: resolve('src/sounds'), to: 'sounds'},
             // {from: resolve('src/css/base.css'), to: 'css/base.css'},
-            {from: resolve('src/lib/createjs-2015.11.26.min.js'), to: 'lib/createjs-2015.11.26.min.js'},
+            // {from: resolve('src/lib/createjs-2015.11.26.min.js'), to: 'lib/createjs-2015.11.26.min.js'},
+            {from: resolve('src/lib/easeljs.min.js'), to: 'lib/easeljs.min.js'},
+            {from: resolve('src/lib/preloadjs.min.js'), to: 'lib/preloadjs.min.js'},
+            {from: resolve('src/lib/tweenjs.min.js'), to: 'lib/tweenjs.min.js'},
+            {from: resolve('src/lib/soundjs.min.js'), to: 'lib/soundjs.min.js'},
         ])
     ],
     externals: {

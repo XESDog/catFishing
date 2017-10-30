@@ -37,7 +37,7 @@ window.debug.fps = true;
 window.debug.resubmitAnswer = resubmitAnswer;
 window.debug.answerResult = answerResult;
 
-window.debug=null;
+window.debug = null;
 
 
 window.addEventListener('init_start', function () {

@@ -3,33 +3,37 @@ html
     head
         title #{htmlWebpackPlugin.options.title}
         meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
         link(href='./css/base.css' rel="stylesheet")
-        script(src='./preload.js')
+        script(src='./js/preload.js')
     body(style={margin: 'auto', 'background-color': 'black'})
         div(style={
-            display:'none'
+            display: 'none'
         }) #{htmlWebpackPlugin.options.version}
         div(class='container')
             div(class='page-loading')
                 div(class='loader-container run done')
                     span(class='runner')
                 span(class='loadingText') loading...
-        div(id='animation_container'
-        style={
-            position: 'absolute',
-            margin: 'auto',
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0
-        })
-            canvas(id='canvas' width='1920' height='1080')
-            img(class='logo' src='./images/logo.png')
-            img(class='close' src='./images/close.png' style={display: 'none'})
-            div(class='timeout') abc
-        div(id='dom_overlay_container')
-        script(src='./lib/createjs-2015.11.26.min.js')
-        script(src='./start.js')
-        script(src='./gaming.js')
-        script(src='./end.js')
-
+            div(id='animation_container'
+            style={
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+            })
+                canvas(id='canvas' width='1920' height='1080')
+                img(class='logo' src='./images/logo.png')
+                img(class='close' src='./images/close.png' style={display: 'none'})
+                div(class='timeout')
+            div(id='dom_overlay_container')
+        //script(src='./lib/createjs-2015.11.26.min.js')
+        script(src='./lib/easeljs.min.js')
+        script(src='./lib/preloadjs.min.js')
+        script(src='./lib/soundjs.min.js')
+        script(src='./lib/tweenjs.min.js')
+        script(src='./js/start.js')
+        script(src='./js/gaming.js')
+        script(src='./js/end.js')

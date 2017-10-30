@@ -50,9 +50,13 @@ export function gamingPage(q) {
 
     return init('1051F7115DE24BA0A3C40CFA4C9F9B5A', 'gaming', true)
         .then(({lib: l, exportRoot: e}) => new Promise(resolve => {
-                window.dispatchEvent(new Event('init_gaming'))
                 lib = l;
                 exportRoot = e;
+
+                let tick=exportRoot.on('tick',()=>{
+                    window.dispatchEvent(new Event('init_gaming'));
+                    exportRoot.off('tick', tick);
+                })
 
 
                 stage = exportRoot.stage;
@@ -225,6 +229,8 @@ function check(fish) {
                     generatorQuestion();
                 } else {
 
+                    exportRoot.parent.removeChild(exportRoot)
+
                     let postArr = getPostArr();
                     postAnswer(postArr, totalQuestion);
 
@@ -365,14 +371,17 @@ function getFishFromPool() {
         return fishPool.splice(0, 1)[0]
     } else {
         //所有鱼默认有该事件
-        var fish = new lib.option();
+        let fish = new lib.option();
         fish.on('mouseover', e => {
             fish.scaleX = 1.1;
             fish.scaleY = 1.1
+
+            console.log(fish.cursor);
         })
         fish.on('mouseout', e => {
             fish.scaleX = 1;
-            fish.scaleY = 1
+            fish.scaleY = 1;
+
         });
         fish.cursor = 'pointer';
         return fish;
